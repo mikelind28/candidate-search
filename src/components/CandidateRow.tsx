@@ -1,6 +1,5 @@
 // imports
 import Candidate from "../interfaces/Candidate.interface";
-import SavedCandidates from "../pages/SavedCandidates";
 
 interface candidateRowProps {
     currentCandidate: Candidate;
