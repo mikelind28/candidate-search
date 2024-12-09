@@ -30,12 +30,11 @@ const CandidateRow = ({currentCandidate}: candidateRowProps) => {
     return (
         <>
             <tr>
-                <th scope="row"><img src={`${currentCandidate.avatar_url}`}></img></th>
+                <th scope="row"><img src={`${currentCandidate.avatar_url}`} className="table-img"></img></th>
                 <td>{`${currentCandidate.name}`}</td>
                 <td>{`${currentCandidate.location}`}</td>
                 <td>{`${currentCandidate.email}`}</td>
                 <td>{`${currentCandidate.company}`}</td>
-                <td>{`${currentCandidate.bio}`}</td>
                 <td><button onClick={handleRemove}>❌</button></td>
             </tr>
         </>

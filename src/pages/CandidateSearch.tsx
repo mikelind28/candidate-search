@@ -77,8 +77,10 @@ const CandidateSearch = () => {
       <CandidateCard 
       currentCandidate={currentCandidate}
       />
-      <button onClick={handleDeny}>❌</button>
-      <button onClick={handleAccept}>✅</button>
+      <div>
+        <button onClick={handleDeny}>❌</button>
+        <button onClick={handleAccept}>✅</button>
+      </div>
     </>
   );
 };
