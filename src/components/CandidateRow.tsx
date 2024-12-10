@@ -6,27 +6,23 @@ interface candidateRowProps {
 }
 
 const CandidateRow = ({currentCandidate}: candidateRowProps) => {
-    console.log(`this is current candidate id: ${currentCandidate.id}`);
 
+    // removes a user from local storage if the reject button is clicked.
     function handleRemove() {
         const storedCandidates = localStorage.getItem("Potential Candidates");
         if (typeof storedCandidates === 'string') {
             const parsedCandidates = JSON.parse(storedCandidates);
             for (let i = 0; i < parsedCandidates.length; i++) {
                 if (parsedCandidates[i].id === currentCandidate.id) {
-                    console.log(i);
-                    console.log(parsedCandidates[i].id);
-                    console.log(currentCandidate.id);
                     parsedCandidates.splice(i, 1);
-                    console.log(parsedCandidates);
                     localStorage.setItem("Potential Candidates", JSON.stringify(parsedCandidates));
-                    // document.location.replace
                     window.location.reload();
                 }
             }
         }
     }
 
+    // renders user info that's been passed in as a prop.
     return (
         <>
             <tr>

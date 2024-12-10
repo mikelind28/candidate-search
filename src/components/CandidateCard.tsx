@@ -4,6 +4,7 @@ type CandidateCardProps = {
   currentCandidate: Candidate;
 };
 
+// the component used to render a random user.
 const CandidateCard = ({ currentCandidate }: CandidateCardProps) => {
   return (
     <>

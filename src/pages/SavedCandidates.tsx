@@ -1,6 +1,7 @@
 import Candidate from "../interfaces/Candidate.interface";
 import CandidateRow from "../components/CandidateRow";
 
+// displays a table of saved candidates. if there are none found in local storage, displays that message.
 const SavedCandidates = () => {
   if (!localStorage.getItem("Potential Candidates")) {
     return (

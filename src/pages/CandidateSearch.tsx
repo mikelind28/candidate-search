@@ -3,10 +3,12 @@ import { searchGithub, searchGithubUser } from '../api/API';
 import Candidate from '../interfaces/Candidate.interface';
 import CandidateCard from '../components/CandidateCard';
 
+// this is the homepage. 
 const CandidateSearch = () => {
 
   const [randomUserName, setRandomUserName] = useState<string>("");
 
+  // finds a random user using the searchGithub function, saves the username to randomUserName.
   useEffect(() => {
     searchGithub()
     .then((userArray) => {
@@ -15,8 +17,7 @@ const CandidateSearch = () => {
     });
   }, []);
 
-  console.log(`this is username: ${randomUserName}`);
-
+  // when you click the deny button, it loads another random user.
   function handleDeny() {
     searchGithub()
     .then((userArray) => {
@@ -36,6 +37,7 @@ const CandidateSearch = () => {
     company: ""
   });
 
+  // builds a Candidate object based off of the username of the found user. the username is passed into another API call, the searchGithubUser function.
   useEffect(() => {
     searchGithubUser(randomUserName)
     .then((user) => {
@@ -53,6 +55,7 @@ const CandidateSearch = () => {
     });
   }, [randomUserName]);
 
+  // if you accept the user, it saves them to local storage. 
   function handleAccept() {
     if (!localStorage.getItem("Potential Candidates")) {
       let potentialCandidates: Candidate[] = [];
@@ -71,6 +74,7 @@ const CandidateSearch = () => {
     }
   }
 
+  // render the current randomly found github user.
   return (
     <>
       <h1>Candidate Search</h1>
