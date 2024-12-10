@@ -20,6 +20,7 @@ const CandidateRow = ({currentCandidate}: candidateRowProps) => {
                     parsedCandidates.splice(i, 1);
                     console.log(parsedCandidates);
                     localStorage.setItem("Potential Candidates", JSON.stringify(parsedCandidates));
+                    // document.location.replace
                     window.location.reload();
                 }
             }
